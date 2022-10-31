@@ -4,13 +4,11 @@ import QuoteWrapper from "./QuoteWrapper";
 class Apps extends React.Component {
     constructor() {
         super ();
-        this.state = { lists: '', selectedColor: '', bgColor: ['red', 'blue', 'yellow']}
+        this.state = { lists: '' }
         this.getNewQoute = this.getNewQoute.bind(this);
-        this._getRandomColor = this._getRandomColor.bind(this);
     }
     componentDidMount() {
         this.getNewQoute();
-        this._getRandomColor();
     }
     getNewQoute = () => {
         this.setState({ lists: '' });
@@ -31,7 +29,7 @@ class Apps extends React.Component {
     render () {
         return (
             <>
-            <QuoteWrapper style={{backgroundColor: this.state.selectedColor}} content={this.state.lists.content} author={this.state.lists.author} onActive={this.getNewQoute}/>
+            <QuoteWrapper content={this.state.lists.content} author={this.state.lists.author} onActive={this.getNewQoute}/>
             </>    
         )
     }
